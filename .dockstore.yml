@@ -1,0 +1,9 @@
+    version: 1.2
+    workflows:
+        - subclass: WDL
+          primaryDescriptorPath: /rsem_build_ref.wdl  # absolute path
+          testParameterFiles: /rsem_build_ref.json  # absolute path
+          readMePath: /README.md # absolute path
+          authors:
+              - name: Nicola Wong
+                email: w.wong@garvan.org.au
