@@ -1,6 +1,6 @@
 version: 1.2
 workflows:
-  - subclass: WDL
-    primaryDescriptorPath: /rsem_build_ref.wdl  
-    testParameterFiles: /rsem_build_ref.json
+- subclass: WDL
+  primaryDescriptorPath: /rsem_build_ref.wdl  
+  testParameterFiles: /rsem_build_ref.json
 
