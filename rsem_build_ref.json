@@ -1,6 +1,6 @@
 {
   "build_rsem_reference.genome_name": "String",
-  "build_rsem_reference.genome_annotation_gtf": "File",
+  "build_rsem_reference.genome_annotation_gtf": "gs://kccg-cb-annotation-files/RNAseq/gencode.v39.annotation.gtf.gz",
   "build_rsem_reference.memory_gb": "16",
   "build_rsem_reference.genome_fasta": "gs://gcp-public-data--broad-references/hg38/v0/Homo_sapiens_assembly38.fasta",
   "build_rsem_reference.threads": "4"
