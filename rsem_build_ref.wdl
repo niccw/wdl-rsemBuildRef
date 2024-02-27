@@ -13,7 +13,10 @@ task task_build_rsem_reference {
     }
     command {
         set -e
-        rsem-prepare-reference -p ${threads} --gtf ${genome_annotation_gtf} ${genome_fasta} ${genome_name}
+      
+        gzip -d -c ${genome_annotation_gtf} > gene_annotation.gtf
+        rsem-prepare-reference -p ${threads} --gtf gene_annotation.gtf ${genome_fasta} ${genome_name}
+        
     }
 
     # Define output prefix
@@ -29,9 +32,9 @@ task task_build_rsem_reference {
         File transcripts_fa= "${prefix}.transcripts.fa"
     }
     runtime {
-        docker: "biocontainers/rsem:v1.3.1dfsg-1-deb_cv1"
+        #docker: "biocontainers/rsem:v1.3.1dfsg-1-deb_cv1"
         # local test
-        # docker: "niccwwy/rsem_arm:latest"
+        docker: "niccwwy/rsem_arm:latest"
         memory: "${memory_gb}GB"
         cpu: "${threads}"
         maxRetries: 0
